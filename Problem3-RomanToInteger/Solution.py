@@ -77,7 +77,7 @@ class Solution(object):
                 return 1, result + 1  # Consecutive 'I'
             else:
                 result += 1  # Add pending 'I' and reprocess
-                return process_letter(letter, 0, result)
+                return self.process_letter(letter, 0, result)
         
         # State 6: Previous character was 'X'
         elif state == 6:
@@ -89,7 +89,7 @@ class Solution(object):
                 return 6, result + 10  # Consecutive 'X'
             else:
                 result += 10  # Add pending 'X' and reprocess
-                return process_letter(letter, 0, result)
+                return self.process_letter(letter, 0, result)
         
         # State 10: Previous character was 'C'
         elif state == 10:
@@ -101,6 +101,6 @@ class Solution(object):
                 return 10, result + 100  # Consecutive 'C'
             else:
                 result += 100  # Add pending 'C' and reprocess
-                return process_letter(letter, 0, result)
+                return self.process_letter(letter, 0, result)
         
         return state, result
