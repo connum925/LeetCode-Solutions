@@ -1,0 +1,18 @@
+Intuition
+My first thought was to use a brute force approach: compare characters at each position across all strings. I realized I needed two loops - one to iterate through character positions and another to compare that position across all strings. A key optimization is that we only need to check up to the length of the shortest string (e.g., for "flow" and "flowers", we only check the first 4 characters since "flow" is the shortest).
+
+Approach
+First, handle the edge case of an empty input array
+Find the minimum string length to avoid index out of bounds errors
+Iterate through each character position (up to the minimum length)
+For each position, compare the character across all strings:
+Use the first string's character as a reference
+If any string has a different character at that position, stop the search
+Build the result string by appending characters that match across all strings
+Return the result when a mismatch is found or all positions are checked
+Complexity
+Time complexity:
+O(n): In the worst case when all strings are identical, we check every character of every string.
+O(n×m) where n is the number of strings and m is the length of the shortest string.
+Space complexity:
+O(m) where m is the length of the shortest string, for storing the result string.
